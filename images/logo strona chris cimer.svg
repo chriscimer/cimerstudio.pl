@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140">
+  <style>
+    .name {
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-size: 42px;
+      letter-spacing: 3.5px;
+      fill: #111111;
+    }
+    .tagline {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      fill: #111111;
+    }
+  </style>
+
+  <text x="300" y="58" text-anchor="middle" class="name">
+    CHRIS CIMER
+  </text>
+
+  <text x="300" y="92" text-anchor="middle" class="tagline">
+    BESPOKE INTERIORS &amp; FURNITURE
+  </text>
+</svg>
