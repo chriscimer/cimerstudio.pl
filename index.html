@@ -305,9 +305,7 @@
 </div>
 
 </section>
-</div>
 
-</section>
 
   <!-- MODAL SHOP -->
 <div id="modal-shop" class="modal">
@@ -331,6 +329,8 @@
         Zapytaj o ten mebel
       </a>
     </div>
+  </div>
+</div>
   
 
   <!-- PROCES -->
@@ -471,87 +471,6 @@
   
 <!-- MAIN JS -->
   <script src="main.js"></script>
-  <script>
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
-    const closeBtn = modal.querySelector(".close");
-    const nextBtn = modal.querySelector(".next");
-    const prevBtn = modal.querySelector(".prev");
-
-    const galleryImages = document.querySelectorAll(".gallery img");
-    let currentSeries = [];
-    let currentIndex = 0;
-
-    galleryImages.forEach(img => {
-      img.addEventListener("click", () => {
-        const series = img.dataset.series;
-        currentSeries = Array.from(document.querySelectorAll(
-          `.gallery img[data-series="${series}"], #hidden-images img[data-series="${series}"]`
-        ));
-        currentIndex = currentSeries.findIndex(i => i === img);
-        modal.style.display = "flex";
-        modalImg.src = img.src;
-      });
-    });
-
-    closeBtn.addEventListener("click", () => modal.style.display = "none");
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % currentSeries.length;
-      modalImg.src = currentSeries[currentIndex].src;
-    });
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + currentSeries.length) % currentSeries.length;
-      modalImg.src = currentSeries[currentIndex].src;
-    });
-    modal.addEventListener("click", e => { if (e.target === modal) modal.style.display = "none"; });
-
-    const modalShop = document.getElementById("modal-shop");
-    const modalShopImg = document.getElementById("modal-shop-img");
-    const closeShopBtn = modalShop.querySelector(".close");
-    const nextShopBtn = modalShop.querySelector(".next");
-    const prevShopBtn = modalShop.querySelector(".prev");
-
-    const shopGalleryImages = document.querySelectorAll("#shop .gallery img");
-    let currentShopSeries = [];
-    let currentShopIndex = 0;
-
-    shopGalleryImages.forEach(img => {
-      img.addEventListener("click", () => {
-        const series = img.dataset.series;
-        currentShopSeries = Array.from(document.querySelectorAll(
-          `#shop .gallery img[data-series="${series}"], #hidden-shop-images img[data-series="${series}"]`
-        ));
-        currentShopIndex = currentShopSeries.findIndex(i => i === img);
-        modalShop.style.display = "flex";
-        modalShopImg.src = img.src;
-      });
-    });
-
-    closeShopBtn.addEventListener("click", () => modalShop.style.display = "none");
-    nextShopBtn.addEventListener("click", () => {
-      currentShopIndex = (currentShopIndex + 1) % currentShopSeries.length;
-      modalShopImg.src = currentShopSeries[currentShopIndex].src;
-    });
-    prevShopBtn.addEventListener("click", () => {
-      currentShopIndex = (currentShopIndex - 1 + currentShopSeries.length) % currentShopSeries.length;
-      modalShopImg.src = currentShopSeries[currentShopIndex].src;
-    });
-    modalShop.addEventListener("click", e => { if (e.target === modalShop) modalShop.style.display = "none"; });
-
-    // Smooth scrolling
-    document.querySelectorAll('nav a').forEach(anchor => {
-  // jeśli href zaczyna się od #, czyli od kotwicy w tej samej stronie
-  if(anchor.getAttribute('href').startsWith('#')){
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  }
-});
-  </script>
-
+  
 </body>
 </html>
