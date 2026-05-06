@@ -183,11 +183,35 @@
 
   <!-- MODAL -->
   <div id="modal" class="modal">
-    <span class="close">&times;</span>
-    <span class="nav prev">&#10094;</span>
-    <span class="nav next">&#10095;</span>
-    <img class="modal-content main-image" id="modal-img">
+  <span class="close">&times;</span>
+
+  <div class="modal-content">
+
+    <img id="modal-img" class="main-image" src="" alt="">
+
+    <div class="modal-info">
+      <h2 id="modal-title">Nazwa mebla</h2>
+
+      <p class="modal-price" id="modal-price">Cena</p>
+
+      <p id="modal-description">
+        Opis mebla.
+      </p>
+
+      <p class="modal-note">
+        Made to order · ręczne wykonanie · możliwość dopasowania wymiarów i wykończenia
+      </p>
+
+      <a id="modal-contact" href="#" class="modal-contact">
+        Zapytaj o ten mebel
+      </a>
+    </div>
+
   </div>
+
+  <span class="nav prev">&#10094;</span>
+  <span class="nav next">&#10095;</span>
+</div>
 
   <!-- SHOP -->
   <section id="shop">
@@ -219,25 +243,55 @@
 <div id="hidden-shop-images" style="display:none;">
 
   <!-- shop01 -->
-  <img src="/images/chris cimer-collection-wooden-sideboard_01_a.png"
-       alt="Mini bespoke wooden sideboard – luxury furniture – Chris Cimer – UK, Poland, Europe"
-       title="Mini bespoke wooden sideboard – Chris Cimer"
-       data-series="shop01">
 
-  <img src="/images/chris cimer-collection-wooden-sideboard_01_c.png"
-       alt="Mini bespoke wooden sideboard – detail view – Chris Cimer – UK, Poland, Europe"
-       title="Mini bespoke wooden sideboard detail – Chris Cimer"
-       data-series="shop01">
+  
 
-  <img src="/images/chris cimer-collection-wooden-sideboard_01_b.png"
-       alt="Mini bespoke wooden sideboard – premium craftsmanship – Chris Cimer – UK, Poland, Europe"
-       title="Mini bespoke wooden sideboard – Chris Cimer"
-       data-series="shop01">
 
-  <img src="/images/chris cimer-collection-wooden-sideboard_01_d.png"
-       alt="Mini bespoke wooden sideboard – oak and ebony detail – Chris Cimer – UK, Poland, Europe"
-       title="Mini bespoke wooden sideboard detail – Chris Cimer"
-       data-series="shop01">
+
+<img 
+  src="images/chris cimer-collection-wooden-sideboard_01_a.png"
+  alt="Komoda dębowa premium"
+  data-title="Komoda dębowa premium"
+  data-price="12 500 PLN"
+  data-description="Lite drewno dębowe, ręcznie wykonane fronty z frezowanym detalem, naturalne wykończenie olejowoskiem. Mebel wykonywany na zamówienie z możliwością dopasowania wymiarów i wykończenia."
+  onclick="openModal(this)"
+>
+
+
+<img 
+  src="images/chris cimer-collection-wooden-sideboard_01_c.png"
+  alt="Komoda dębowa premium"
+  data-title="Komoda dębowa premium"
+  data-price="12 500 PLN"
+  data-description="Lite drewno dębowe, ręcznie wykonane fronty z frezowanym detalem, naturalne wykończenie olejowoskiem. Mebel wykonywany na zamówienie z możliwością dopasowania wymiarów i wykończenia."
+  onclick="openModal(this)"
+>
+<img 
+  src="images/chris cimer-collection-wooden-sideboard_01_b.png"
+  alt="Komoda dębowa premium"
+  data-title="Komoda dębowa premium"
+  data-price="12 500 PLN"
+  data-description="Lite drewno dębowe, ręcznie wykonane fronty z frezowanym detalem, naturalne wykończenie olejowoskiem. Mebel wykonywany na zamówienie z możliwością dopasowania wymiarów i wykończenia."
+  onclick="openModal(this)"
+>
+
+
+<img 
+  src="images/chris cimer-collection-wooden-sideboard_01_d.png"
+  alt="Komoda dębowa premium"
+  data-title="Komoda dębowa premium"
+  data-price="12 500 PLN"
+  data-description="Lite drewno dębowe, ręcznie wykonane fronty z frezowanym detalem, naturalne wykończenie olejowoskiem. Mebel wykonywany na zamówienie z możliwością dopasowania wymiarów i wykończenia."
+  onclick="openModal(this)"
+>
+
+
+
+
+
+  
+
+
 
   <!-- shop02 -->
   <img src="/images/0a1 sideboard_chris cimer .png"
