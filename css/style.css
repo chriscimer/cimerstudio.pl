@@ -385,10 +385,9 @@ footer a:hover {
     height: 60px;
   }
 
-  /* Menu nadal poziomo, zmniejszone odstępy */
   .main-nav {
     flex-direction: row;
-    gap: 16px; /* zmniejszone, mieści się w ekranie */
+    gap: 16px;
     justify-content: center;
   }
 
@@ -399,11 +398,19 @@ footer a:hover {
     margin: 50px auto;
   }
 
-  /* Hero image pełna szerokość */
+  .hero {
+    height: auto;
+    padding: 0;
+  }
+
   .hero img {
-    object-fit: contain;
     width: 100%;
     height: auto;
+    object-fit: contain;
+  }
+
+  #services {
+    padding-top: 32px;
   }
 
   .nav {
@@ -419,50 +426,125 @@ footer a:hover {
     padding: 80px 20px;
   }
 
-  html {
-    scroll-behavior: smooth;
+  a[href^="#"] {
+    display: none !important;
+  }
+}
+
+/* ================= SPLIT PREMIUM SEO PAGE ================= */
+
+.split-page {
+  background: #f7f5f1;
+  color: #1c1c1c;
+  min-height: 100vh;
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  min-height: 100vh;
+}
+
+.split-image {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.split-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 90px 80px;
+  max-width: 620px;
+}
+
+.split-text h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin-bottom: 42px;
+}
+
+.split-text .lead {
+  font-size: 20px;
+  line-height: 1.75;
+  color: #222;
+  margin-bottom: 26px;
+}
+
+.split-text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 22px;
+}
+
+.links {
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+.links a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.35);
+}
+
+.links a:hover {
+  border-bottom-color: #000;
+}
+
+.back {
+  margin-top: 42px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  color: #111;
+  border-bottom: 1px solid #111;
+  width: fit-content;
+  padding-bottom: 6px;
+}
+
+.back:hover {
+  opacity: 0.55;
+}
+
+/* ================= SPLIT MOBILE ================= */
+
+@media (max-width: 900px) {
+  .split-section {
+    grid-template-columns: 1fr;
   }
 
-  .portfolio-item {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .split-image {
+    height: 58vh;
   }
 
-  .portfolio-item img {
-    display: block;
-    width: 100%;
-    transition: transform 0.3s ease;
+  .split-text {
+    padding: 56px 24px 80px;
+    max-width: none;
   }
 
-  .portfolio-item:hover img {
-    transform: scale(1.05);
+  .split-text h1 {
+    font-size: 36px;
   }
 
-  .portfolio-item::after {
-    content: attr(data-title);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 15px;
-    background: rgba(0,0,0,0.4);
-    color: #FFD700;
-    font-weight: 500;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  .split-text .lead {
+    font-size: 18px;
   }
 
-  .portfolio-item:hover::after {
-    opacity: 1;
+  .split-text p {
+    font-size: 16px;
   }
-
-  .portfolio-item:hover {
-    box-shadow: 0 10px 10px rgba(0,0,0,0.15);
-  }
-a[href^="#"] {
-  display: none !important;
 }
 /* ================= HERO → SERVICES spacing fix ================= */
 
