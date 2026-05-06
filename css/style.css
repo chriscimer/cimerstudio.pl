@@ -1044,3 +1044,38 @@ body {
   opacity: 0.6;
 }
 }
+}
+}
+}
+
+/* ===== FORCE SHOP MODAL WHITE TEXT ===== */
+
+#modal-shop,
+#modal-shop * {
+  color: #fff !important;
+}
+
+#modal-shop .modal-info {
+  background: rgba(0, 0, 0, 0.78) !important;
+  color: #fff !important;
+  z-index: 10001 !important;
+}
+
+#modal-shop .modal-info h2,
+#modal-shop .modal-info p,
+#modal-shop .modal-info a {
+  color: #fff !important;
+}
+
+#modal-shop .modal-price {
+  color: #e5d3a1 !important;
+}
+
+#modal-shop .modal-note {
+  color: #d8d8d8 !important;
+}
+
+#modal-shop .modal-contact {
+  color: #fff !important;
+  border-bottom: 1px solid #fff !important;
+}
