@@ -914,6 +914,98 @@ body {
   .split-text h1 {
     font-size: 34px;
   }
+/* ================= PRODUCT MODAL PREMIUM ================= */
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content .main-image {
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.modal-info {
+  position: absolute;
+  left: 42px;
+  bottom: 42px;
+  max-width: 440px;
+  padding: 28px 32px;
+  background: rgba(18, 18, 18, 0.72);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  text-align: left;
+}
+
+.modal-info h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.modal-price {
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  color: #f2eee6;
+}
+
+.modal-info p {
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+  color: #e7e2da;
+}
+
+.modal-note {
+  font-size: 12px !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #cfc7bb !important;
+}
+
+.modal-contact {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+}
+
+.modal-contact:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .modal-info {
+    position: static;
+    max-width: none;
+    margin-top: 18px;
+    padding: 22px;
+  }
+
+  .modal-content {
+    max-width: 92%;
+  }
+
+  .modal-content .main-image {
+    max-height: 58vh;
+  }
+
+  .modal-info h2 {
+    font-size: 24px;
+  }
 }
 }
 }
