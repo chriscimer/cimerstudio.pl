@@ -78,46 +78,71 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // =======================
-  // SHOP MODAL
-  // =======================
-  const shopModal = document.getElementById("modal-shop");
-  const shopModalImg = document.getElementById("modal-shop-img");
-  const shopCloseBtn = shopModal.querySelector(".close");
-  const shopNextBtn = shopModal.querySelector(".next");
-  const shopPrevBtn = shopModal.querySelector(".prev");
+// SHOP MODAL
+// =======================
+const shopModal = document.getElementById("modal-shop");
+const shopModalImg = document.getElementById("modal-shop-img");
+const shopCloseBtn = shopModal.querySelector(".close");
+const shopNextBtn = shopModal.querySelector(".next");
+const shopPrevBtn = shopModal.querySelector(".prev");
 
-  const shopGalleryImages = document.querySelectorAll("#shop .gallery img");
-  let currentShopSeries = [];
-  let currentShopIndex = 0;
+const shopTitle = document.getElementById("modal-shop-title");
+const shopPrice = document.getElementById("modal-shop-price");
+const shopDescription = document.getElementById("modal-shop-description");
+const shopContact = document.getElementById("modal-shop-contact");
 
-  shopGalleryImages.forEach(img => {
-    img.addEventListener("click", () => {
-      const series = img.dataset.series;
+const shopGalleryImages = document.querySelectorAll("#shop .gallery img");
+let currentShopSeries = [];
+let currentShopIndex = 0;
 
-      currentShopSeries = Array.from(document.querySelectorAll(
-        `#shop .gallery img[data-series="${series}"], #hidden-shop-images img[data-series="${series}"]`
-      ));
-      currentShopIndex = currentShopSeries.indexOf(img);
+function updateShopModal() {
+  const currentImg = currentShopSeries[currentShopIndex];
+  if (!currentImg) return;
 
-      shopModal.style.display = "flex";
-      shopModalImg.src = img.src;
-    });
+  shopModalImg.src = currentImg.src;
+  shopModalImg.alt = currentImg.alt || "";
+
+  if (shopTitle) shopTitle.innerText = currentImg.dataset.title || "";
+  if (shopPrice) shopPrice.innerText = currentImg.dataset.price || "";
+  if (shopDescription) shopDescription.innerText = currentImg.dataset.description || "";
+
+  if (shopContact) {
+    shopContact.href =
+      "mailto:chriscimer@icloud.com?subject=" +
+      encodeURIComponent("Zapytanie o mebel: " + (currentImg.dataset.title || ""));
+  }
+}
+
+shopGalleryImages.forEach(img => {
+  img.addEventListener("click", () => {
+    const series = img.dataset.series;
+
+    currentShopSeries = Array.from(document.querySelectorAll(
+      `#shop .gallery img[data-series="${series}"], #hidden-shop-images img[data-series="${series}"]`
+    ));
+
+    currentShopIndex = currentShopSeries.indexOf(img);
+
+    shopModal.style.display = "flex";
+    updateShopModal();
   });
+});
 
-  shopCloseBtn.addEventListener("click", () => shopModal.style.display = "none");
-  shopNextBtn.addEventListener("click", () => {
-    currentShopIndex = (currentShopIndex + 1) % currentShopSeries.length;
-    shopModalImg.src = currentShopSeries[currentShopIndex].src;
-  });
-  shopPrevBtn.addEventListener("click", () => {
-    currentShopIndex = (currentShopIndex - 1 + currentShopSeries.length) % currentShopSeries.length;
-    shopModalImg.src = currentShopSeries[currentShopIndex].src;
-  });
+shopCloseBtn.addEventListener("click", () => shopModal.style.display = "none");
 
-  shopModal.addEventListener("click", e => {
-    if (e.target === shopModal) shopModal.style.display = "none";
-  });
+shopNextBtn.addEventListener("click", () => {
+  currentShopIndex = (currentShopIndex + 1) % currentShopSeries.length;
+  updateShopModal();
+});
 
+shopPrevBtn.addEventListener("click", () => {
+  currentShopIndex = (currentShopIndex - 1 + currentShopSeries.length) % currentShopSeries.length;
+  updateShopModal();
+});
+
+shopModal.addEventListener("click", e => {
+  if (e.target === shopModal) shopModal.style.display = "none";
+});
   // =======================
 // HERO IMAGE ROTATION
 // =======================
