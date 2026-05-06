@@ -1006,6 +1006,41 @@ body {
   .modal-info h2 {
     font-size: 24px;
   }
+/* ===== SHOP MODAL TEXT FIX (WHITE PREMIUM) ===== */
+
+#modal-shop .modal-info {
+  color: #fff;
 }
+
+#modal-shop h2 {
+  color: #fff;
+}
+
+#modal-shop .modal-price {
+  color: #e5d3a1; /* lekko złoty = premium */
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#modal-shop p {
+  color: #ddd;
+}
+
+#modal-shop .modal-note {
+  color: #aaa;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+#modal-shop .modal-contact {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+#modal-shop .modal-contact:hover {
+  opacity: 0.6;
 }
 }
