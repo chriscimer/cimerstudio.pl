@@ -846,4 +846,134 @@ h3,
 .eyebrow {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 }
+/* =========================================================
+   SALES / CONTACT FORM PATCH
+   Dopisz na końcu /en/css/style.css
+   ========================================================= */
+
+/* Krótki zakres prac pod opisem realizacji */
+.project-scope {
+  max-width: 820px;
+  margin-top: 22px !important;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  font-size: 15px !important;
+  line-height: 1.65;
+  color: var(--muted) !important;
+}
+
+/* Sekcja zabudowy / detal */
+.detail-feature {
+  background: var(--bg-soft);
+}
+
+/* Formularz kontaktowy */
+.contact-form {
+  margin-top: clamp(42px, 6vw, 78px);
+  max-width: 1180px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted-dark);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--text);
+  padding: 16px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.4;
+  border-radius: 0;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--text);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.full-field {
+  grid-column: 1 / -1;
+}
+
+.contact-form button {
+  margin-top: 28px;
+  border: 1px solid var(--text);
+  background: var(--text);
+  color: var(--bg);
+  padding: 18px 28px;
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.contact-form button:hover {
+  background: transparent;
+  color: var(--text);
+}
+
+/* Kontakt pod formularzem trochę niżej */
+.contact-section .contact-grid {
+  margin-top: clamp(56px, 7vw, 96px);
+}
+
+/* Mniej agresywne duże litery */
+.main-nav,
+.header-cta {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 14px;
+}
+
+.section-kicker,
+.eyebrow {
+  text-transform: none;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+}
+
+.hero-media figcaption,
+.story-gallery figcaption {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+
+  .project-scope {
+    font-size: 14px !important;
+  }
 }
