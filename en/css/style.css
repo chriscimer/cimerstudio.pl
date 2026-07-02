@@ -832,4 +832,18 @@ section {
   text-transform: none;
   color: var(--muted);
 }
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.brand,
+.main-nav,
+.header-cta,
+.section-kicker,
+.eyebrow {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
 }
